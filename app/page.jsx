@@ -345,12 +345,14 @@ function HubPage({ nav }) {
         {/* Navigation Menu */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+          gridTemplateColumns: "repeat(2, 1fr)",
           gap: 10,
           marginBottom: 24,
           maxWidth: 540,
           marginLeft: "auto",
           marginRight: "auto",
+          padding: "0 8px",
+          width: "100%",
         }}>
           {destinations.map((d) => (
             <button
@@ -682,7 +684,7 @@ function CodexTOCPage({ goHub, nav }) {
           marginBottom: 20,
         }}>Table of Contents</h2>
 
-        <div style={{ display: "flex", gap: 28, justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: 28, justifyContent: "center", flexWrap: "wrap" }}>
           {chapters.map((part) => (
             <div key={part.part} style={{ flex: 1, maxWidth: 310 }}>
               <p style={{
@@ -946,7 +948,7 @@ function GregPage({ goHub }) {
           marginBottom: 28,
         }}>Principal Investigators</h1>
 
-        <div style={{ display: "flex", gap: 32, justifyContent: "center", alignItems: "flex-start" }}>
+        <div style={{ display: "flex", gap: 32, justifyContent: "center", alignItems: "flex-start", flexWrap: "wrap" }}>
           {/* Greg */}
           <div style={{ flex: 1, maxWidth: 300, textAlign: "center" }}>
             <div style={{
