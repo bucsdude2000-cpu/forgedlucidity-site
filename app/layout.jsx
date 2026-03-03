@@ -1,0 +1,21 @@
+export const metadata = {
+  title: 'Forged Lucidity Research Institute',
+  description: 'A unified framework for consciousness and physics. Cx = Φ × C²',
+  openGraph: {
+    title: 'Forged Lucidity Research Institute',
+    description: 'A unified framework for consciousness and physics.',
+    url: 'https://forgedlucidity.ai',
+    siteName: 'Forged Lucidity',
+    type: 'website',
+  },
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body style={{ margin: 0, padding: 0, overflow: 'hidden', background: '#0B1320' }}>
+        {children}
+      </body>
+    </html>
+  )
+}
