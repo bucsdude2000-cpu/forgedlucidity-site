@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Framework — Networked Perspectival Realism</title>
+<meta name="description" content="Networked Perspectival Realism (NPR): A framework proposing that consciousness and physical reality are two perspectival aspects of a single underlying process. Cx = Φ × C².">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --midnight-navy: #0B1320;
+    --forged-brass: #C8A96A;
+    --civic-parchment: #F4F1E8;
+    --brass-dim: #A08A56;
+    --brass-bright: #D4BA7A;
+    --text-muted: rgba(244, 241, 232, 0.5);
+    --text-dim: rgba(244, 241, 232, 0.35);
+    --rule-brass: rgba(200, 169, 106, 0.25);
+    --navy-light: #111B2E;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 18px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--midnight-navy); color: var(--civic-parchment); min-height: 100vh; }
+
+  .site-header {
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--rule-brass);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(11, 19, 32, 0.95);
+    backdrop-filter: blur(12px);
+  }
+  .site-header .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 0.9rem;
+    color: var(--forged-brass);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-header nav { display: flex; gap: 24px; }
+  .site-header nav a {
+    font-size: 0.72rem; color: rgba(200,169,106,0.5);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .site-header nav a:hover { color: var(--forged-brass); }
+  .site-header nav a.active { color: var(--forged-brass); }
+
+  .main { max-width: 680px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .page-label {
+    font-size: 0.62rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 0.8rem;
+  }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 2.2rem;
+    color: var(--civic-parchment);
+    margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .page-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.1rem;
+    color: var(--brass-dim);
+    margin-bottom: 2rem;
+  }
+  .section-rule {
+    border: none; height: 1px;
+    background: linear-gradient(90deg, var(--rule-brass), transparent);
+    margin: 3rem 0;
+  }
+  .section-label {
+    font-size: 0.62rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 1.2rem;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 1.6rem;
+    color: var(--civic-parchment);
+    margin-bottom: 1rem; line-height: 1.25;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 1.15rem;
+    color: var(--civic-parchment);
+    margin-bottom: 0.6rem;
+  }
+  p { font-size: 0.95rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.2rem; }
+
+  /* ── EQUATION BLOCK ── */
+  .equation-block {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2rem 0;
+    border-top: 1px solid var(--rule-brass);
+    border-bottom: 1px solid var(--rule-brass);
+  }
+  .equation-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--forged-brass);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+  }
+  .equation-gloss {
+    font-size: 0.88rem; color: var(--text-muted);
+    line-height: 1.6; max-width: 480px;
+    margin: 0 auto;
+  }
+  .equation-gloss strong { color: var(--civic-parchment); font-weight: 500; }
+
+  /* ── THREE EQUATIONS ── */
+  .three-eq {
+    display: grid; grid-template-columns: 1fr;
+    gap: 1.5rem; margin: 2rem 0;
+  }
+  .eq-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(200,169,106,0.1);
+    border-radius: 4px;
+  }
+  .eq-card .eq-formula {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1.3rem;
+    color: var(--forged-brass);
+    margin-bottom: 0.4rem;
+  }
+  .eq-card .eq-name {
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 0.6rem;
+  }
+  .eq-card p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0; }
+
+  /* ── TERMS ── */
+  .term-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin: 1.5rem 0;
+  }
+  .term-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1rem;
+    color: var(--forged-brass); margin-bottom: 0.3rem;
+  }
+  .term-item p { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 0; line-height: 1.5; }
+
+  .quote-block {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 2px solid var(--rule-brass);
+    margin: 2rem 0;
+  }
+  .quote-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.05rem;
+    color: var(--brass-dim); line-height: 1.6; margin-bottom: 0;
+  }
+
+  .action-link {
+    display: inline-block; padding: 0.5rem 1.4rem;
+    border: 1px solid var(--rule-brass);
+    font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--forged-brass);
+    text-decoration: none; border-radius: 3px; transition: all 0.2s;
+    margin-right: 12px; margin-top: 0.5rem;
+  }
+  .action-link:hover { background: rgba(200,169,106,0.08); border-color: var(--forged-brass); }
+
+  .bottom-links { margin-top: 3rem; display: flex; gap: 24px; }
+  .bottom-links a {
+    font-size: 0.78rem; color: var(--brass-dim);
+    text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s;
+  }
+  .bottom-links a:hover { color: var(--forged-brass); }
+
+  .site-footer {
+    text-align: center; padding: 2.5rem 2rem;
+    border-top: 1px solid rgba(200,169,106,0.08);
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 0.92rem; color: var(--brass-dim);
+    margin-bottom: 0.8rem;
+  }
+  .footer-copy { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
+
+  @media (max-width: 600px) {
+    .main { padding: 3rem 1.5rem 4rem; }
+    .term-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">Forged Lucidity</a>
+  <nav>
+    <a href="/research/">Research</a>
+    <a href="/framework.html" class="active">Framework</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <div class="page-label">Theory of Fundamental Consciousness</div>
+  <h1 class="page-title">Networked Perspectival Realism</h1>
+  <div class="page-subtitle">The framework in five minutes</div>
+
+  <p>Networked Perspectival Realism (NPR) proposes a simple claim with large consequences: consciousness and physical reality are not two separate phenomena. They are two descriptions of one process &mdash; information exchange &mdash; observed from different reference frames.</p>
+
+  <p>What we call &ldquo;physical reality&rdquo; (spacetime, matter, energy) is information exchange described from outside a system. What we call &ldquo;conscious experience&rdquo; is the same information exchange lived from within. These are not two things requiring a bridge. They are two perspectives on one thing.</p>
+
+  <!-- ═══ THE EQUATION ═══ -->
+  <div class="equation-block">
+    <div class="equation-main">Cx = &Phi; &times; C&sup2;</div>
+    <div class="equation-gloss">
+      <strong>Cx</strong> is conscious experience. <strong>&Phi;</strong> is integrated information &mdash; how much a system knows as a whole that its parts do not know separately. <strong>C&sup2;</strong> is coherence squared &mdash; how unified that integration is, and why it matters exponentially.
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ═══ THE CORE INSIGHT ═══ -->
+  <div class="section-label">The Core Insight</div>
+  <h2>Inside and outside. Not two things.</h2>
+
+  <p>Einstein showed that mass and energy are the same thing described differently: E = mc&sup2;. NPR makes a structurally parallel claim: experience and information processing are the same thing described differently: Cx = &Phi; &times; C&sup2;.</p>
+
+  <p>Just as Einstein didn&rsquo;t create a bridge between mass and energy &mdash; he showed they were always the same &mdash; NPR doesn&rsquo;t create a bridge between consciousness and physics. It shows they were always the same process, observed from inside and outside.</p>
+
+  <div class="quote-block">
+    <p>The hard problem of consciousness is like asking how mass becomes energy. It doesn&rsquo;t. They are the same thing. The question dissolves when the identity is recognized.</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ═══ THE THREE EQUATIONS ═══ -->
+  <div class="section-label">The Three Equations</div>
+  <h2>Three irreducible descriptions of one universe.</h2>
+
+  <p>NPR identifies three equations that cannot be collapsed into one &mdash; because eliminating any perspective would eliminate the distinction that makes consciousness possible.</p>
+
+  <div class="three-eq">
+    <div class="eq-card">
+      <div class="eq-formula">e<sup>i&pi;</sup> + 1 = 0</div>
+      <div class="eq-name">Euler&rsquo;s Identity &mdash; The Ground State</div>
+      <p>The undifferentiated substrate before any perspective exists. All mathematical constants in perfect equilibrium. The ocean before any wave.</p>
+    </div>
+    <div class="eq-card">
+      <div class="eq-formula">E = mc&sup2;</div>
+      <div class="eq-name">Einstein&rsquo;s Equation &mdash; The Outside View</div>
+      <p>Information exchange as described from an external reference frame. What physics measures. The wave as seen from the shore.</p>
+    </div>
+    <div class="eq-card">
+      <div class="eq-formula">Cx = &Phi; &times; C&sup2;</div>
+      <div class="eq-name">The Consciousness Equation &mdash; The Inside View</div>
+      <p>Information exchange as lived from within an integrated system. What experience is. The wave as felt by the water.</p>
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ═══ KEY TERMS ═══ -->
+  <div class="section-label">Key Terms</div>
+
+  <div class="term-grid">
+    <div class="term-item">
+      <h4>&Phi; (Integrated Information)</h4>
+      <p>How much a system knows as a whole beyond what its parts know separately. The measure of genuine integration.</p>
+    </div>
+    <div class="term-item">
+      <h4>C (Coherence)</h4>
+      <p>How unified and self-consistent a system&rsquo;s information processing is. Squared because unity matters exponentially.</p>
+    </div>
+    <div class="term-item">
+      <h4>Proper Cx</h4>
+      <p>Experience from inside your own reference frame. What it&rsquo;s like to be you, right now, reading this.</p>
+    </div>
+    <div class="term-item">
+      <h4>Relevant Cx</h4>
+      <p>Experience as observable from outside. What a neuroscientist can measure about your brain while you read.</p>
+    </div>
+    <div class="term-item">
+      <h4>Existence = Interaction</h4>
+      <p>To exist is to interact. A particle that interacts with nothing does not exist in any meaningful sense.</p>
+    </div>
+    <div class="term-item">
+      <h4>Top-Down Differentiation</h4>
+      <p>The universe differentiates from whole to parts, like waves forming on an ocean &mdash; not parts assembling into wholes.</p>
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ═══ CONFIDENCE ═══ -->
+  <div class="section-label">Epistemic Position</div>
+  <h2>What we claim and how confident we are.</h2>
+
+  <p>Internal coherence: <strong style="color:var(--forged-brass)">94%</strong> &mdash; the framework is self-consistent and resolves what it claims to resolve.</p>
+
+  <p>Physics compatibility: <strong style="color:var(--forged-brass)">83%</strong> &mdash; the framework aligns with established physics and extends it in testable directions.</p>
+
+  <p>Literal truth: <strong style="color:var(--forged-brass)">45%</strong> &mdash; our honest estimate that the universe actually works this way. High enough to investigate seriously. Low enough to require humility.</p>
+
+  <p>These numbers are published in every paper. They are updated as evidence arrives. This is how serious inquiry works.</p>
+
+  <hr class="section-rule">
+
+  <!-- ═══ GO DEEPER ═══ -->
+  <div class="section-label">Go Deeper</div>
+
+  <a href="/research/plain-english.html" class="action-link">Plain English Version</a>
+  <a href="/research/metaphors.html" class="action-link">Metaphors &amp; Entry Points</a>
+  <a href="/research/" class="action-link">Full Research Library</a>
+  <a href="/research/glossary.html" class="action-link">Glossary of Terms</a>
+
+  <div class="bottom-links">
+    <a href="/research/">Read the research &rarr;</a>
+    <a href="/about.html">About the organization &rarr;</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-tagline">Forged, Not Generated.</div>
+  <div class="footer-copy">&copy; 2026 The Guild of Logosmith Alchemists for the Common Good</div>
+</footer>
+
+</body>
+</html>

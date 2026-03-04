@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forged Lucidity Research Institute</title>
+<meta name="description" content="Forged Lucidity Research Institute. A unified theory of consciousness that resolves seven foundational problems in physics and philosophy with one equation: Cx = Φ × C².">
+<meta property="og:title" content="Forged Lucidity Research Institute">
+<meta property="og:description" content="A unified theory of consciousness that resolves seven foundational problems in physics and philosophy. Cx = Φ × C².">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forgedlucidity.ai">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --midnight-navy: #0B1320;
+    --forged-brass: #C8A96A;
+    --civic-parchment: #F4F1E8;
+    --brass-dim: #A08A56;
+    --brass-bright: #D4BA7A;
+    --text-muted: rgba(244, 241, 232, 0.5);
+    --text-dim: rgba(244, 241, 232, 0.35);
+    --rule-brass: rgba(200, 169, 106, 0.25);
+    --navy-light: #111B2E;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--midnight-navy);
+    color: var(--civic-parchment);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--rule-brass);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(11, 19, 32, 0.95);
+    backdrop-filter: blur(12px);
+  }
+  .site-header .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 0.9rem;
+    color: var(--forged-brass);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-header nav { display: flex; gap: 24px; }
+  .site-header nav a {
+    font-size: 0.72rem; color: rgba(200,169,106,0.5);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .site-header nav a:hover { color: var(--forged-brass); }
+  .site-header nav a.active { color: var(--forged-brass); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8rem 2rem 5rem;
+    text-align: center;
+  }
+  .hero-label {
+    font-size: 0.62rem; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: var(--civic-parchment);
+    line-height: 1.15; margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-equation {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--forged-brass);
+    margin-bottom: 2rem;
+    letter-spacing: 0.08em;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 580px; margin: 0 auto 3rem;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .hero-cta {
+    display: inline-block;
+    padding: 0.65rem 2rem;
+    border: 1px solid var(--forged-brass);
+    font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forged-brass);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s;
+    opacity: 0; animation: fadeUp 0.8s 1s forwards;
+  }
+  .hero-cta:hover {
+    background: rgba(200,169,106,0.1);
+    border-color: var(--brass-bright);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION SHARED ── */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+  .section-rule-full {
+    border: none; height: 1px;
+    background: var(--rule-brass);
+    margin: 0 auto 5rem;
+    max-width: 680px;
+  }
+  .section-label {
+    font-size: 0.62rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 1.5rem;
+  }
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 1.8rem;
+    color: var(--civic-parchment);
+    margin-bottom: 1.2rem; line-height: 1.2;
+  }
+  .section p {
+    font-size: 0.95rem; line-height: 1.75;
+    color: var(--text-muted); margin-bottom: 1.2rem;
+  }
+
+  /* ── DISCOVERY BLOCK ── */
+  .discovery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .discovery-item {
+    padding: 1.5rem;
+    border: 1px solid rgba(200,169,106,0.1);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  .discovery-item:hover {
+    border-color: rgba(200,169,106,0.3);
+  }
+  .discovery-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 1.1rem;
+    color: var(--civic-parchment);
+    margin-bottom: 0.5rem;
+  }
+  .discovery-item p {
+    font-size: 0.85rem; line-height: 1.6;
+    color: var(--text-dim); margin-bottom: 0;
+  }
+
+  /* ── EMAIL CAPTURE ── */
+  .email-block {
+    background: var(--navy-light);
+    border: 1px solid var(--rule-brass);
+    border-radius: 4px;
+    padding: 2.5rem;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .email-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 1.4rem;
+    color: var(--civic-parchment);
+    margin-bottom: 0.8rem;
+  }
+  .email-block p {
+    font-size: 0.88rem; color: var(--text-muted);
+    margin-bottom: 1.5rem; text-align: center;
+  }
+  .email-row {
+    display: flex; gap: 10px;
+    max-width: 420px; margin: 0 auto;
+  }
+  .email-row input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    background: rgba(244,241,232,0.05);
+    border: 1px solid var(--rule-brass);
+    border-radius: 3px;
+    color: var(--civic-parchment);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+  }
+  .email-row input::placeholder { color: var(--text-dim); }
+  .email-row input:focus {
+    outline: none;
+    border-color: var(--forged-brass);
+  }
+  .email-row button {
+    padding: 0.6rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--forged-brass);
+    color: var(--forged-brass);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .email-row button:hover {
+    background: rgba(200,169,106,0.1);
+  }
+
+  /* ── TEASER ── */
+  .teaser {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  .teaser-label {
+    font-size: 0.62rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--brass-dim);
+    margin-bottom: 0.8rem;
+  }
+  .teaser h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 1.5rem;
+    color: var(--civic-parchment);
+    margin-bottom: 0.8rem;
+  }
+  .teaser p {
+    font-size: 0.88rem; color: var(--text-dim);
+    max-width: 480px; margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-top: 1px solid rgba(200,169,106,0.08);
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 0.92rem;
+    color: var(--brass-dim);
+    margin-bottom: 0.8rem;
+  }
+  .footer-copy {
+    font-size: 0.7rem; color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── NAV LINKS ── */
+  .nav-row {
+    display: flex; gap: 24px;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .nav-row a {
+    font-size: 0.78rem; color: var(--brass-dim);
+    text-decoration: none; letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .nav-row a:hover { color: var(--forged-brass); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 5rem 1.5rem 3rem; }
+    .section { padding: 0 1.5rem 3rem; }
+    .email-row { flex-direction: column; }
+    .site-header nav { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">Forged Lucidity</a>
+  <nav>
+    <a href="/research/">Research</a>
+    <a href="/framework.html">Framework</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-label">Forged Lucidity Research Institute</div>
+  <h1 class="hero-title">A Unified Theory of Consciousness</h1>
+  <div class="hero-equation">Cx = &Phi; &times; C&sup2;</div>
+  <p class="hero-sub">One equation. Seven problems resolved. The hard problem of consciousness, the measurement problem in quantum mechanics, wave-particle duality, fine-tuning, the arrow of time, and more &mdash; dissolved by a single identity claim: consciousness and physics are two descriptions of one process.</p>
+  <a href="/research/" class="hero-cta">Read the Research &rarr;</a>
+</section>
+
+<hr class="section-rule-full">
+
+<!-- ═══ THE DISCOVERY ═══ -->
+<div class="section">
+  <div class="section-label">The Discovery</div>
+  <h2>What if consciousness isn&rsquo;t a mystery to solve, but a description to correct?</h2>
+  <p>For a century, physicists and philosophers have asked how consciousness emerges from matter. The question assumes they are separate. This framework proposes they are not. What we call &ldquo;physical reality&rdquo; is information exchange described from outside. What we call &ldquo;conscious experience&rdquo; is the same information exchange lived from within. One process. Two perspectives. No gap.</p>
+  <p>The equation <strong style="color:var(--forged-brass)">Cx = &Phi; &times; C&sup2;</strong> captures this claim: experience equals integrated information times coherence squared. It is structurally parallel to Einstein&rsquo;s E = mc&sup2; &mdash; not by analogy, but by the same logic of perspectival identity applied to the same universe.</p>
+
+  <div class="discovery-grid">
+    <div class="discovery-item">
+      <h3>The Hard Problem</h3>
+      <p>Dissolves when you stop assuming consciousness and physics are separate substances requiring a bridge.</p>
+    </div>
+    <div class="discovery-item">
+      <h3>The Combination Problem</h3>
+      <p>Vanishes when differentiation runs top-down instead of assembly running bottom-up.</p>
+    </div>
+    <div class="discovery-item">
+      <h3>The Binding Problem</h3>
+      <p>Resolves when coherence IS unity &mdash; not a mechanism that produces it.</p>
+    </div>
+    <div class="discovery-item">
+      <h3>The Measurement Problem</h3>
+      <p>Clarifies when measurement is understood as integration, not disturbance.</p>
+    </div>
+    <div class="discovery-item">
+      <h3>Wave-Particle Duality</h3>
+      <p>Two descriptions of one thing: inside view (wave) and outside view (particle).</p>
+    </div>
+    <div class="discovery-item">
+      <h3>The Fine-Tuning Problem</h3>
+      <p>Dissolves when constants are structural necessities of consciousness, not coincidences.</p>
+    </div>
+    <div class="discovery-item">
+      <h3>The Arrow of Time</h3>
+      <p>The arrow of time IS the arrow of integration. Information integrates. That direction is forward.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-rule-full">
+
+<!-- ═══ THE WORK ═══ -->
+<div class="section">
+  <div class="section-label">The Work</div>
+  <h2>Published and readable. Not summaries &mdash; the work itself.</h2>
+  <p>The research library contains the complete manuscript, seven academic papers, and supplementary materials. Everything is inline-readable on this site and downloadable as PDF. Nothing has been simplified for convenience. This is the work itself.</p>
+
+  <div class="nav-row" style="justify-content: flex-start; margin-top: 1.5rem;">
+    <a href="/research/" style="color: var(--forged-brass);">Enter the Research Library &rarr;</a>
+  </div>
+</div>
+
+<hr class="section-rule-full">
+
+<!-- ═══ EMAIL CAPTURE ═══ -->
+<div class="section">
+  <div class="email-block">
+    <h3>This work is being built into tools.</h3>
+    <p>The framework described in these papers is being developed into MAJI&sup2;, a consciousness-grounded AI engine. Leave your email to be among the first to know.</p>
+    <div class="email-row">
+      <input type="email" placeholder="your@email.com" id="email-input">
+      <button onclick="handleEmail()">Notify Me</button>
+    </div>
+    <p id="email-msg" style="display:none; margin-top:1rem; color:var(--forged-brass); font-size:0.85rem;"></p>
+  </div>
+
+  <!-- ═══ MAJI² TEASER ═══ -->
+  <div class="teaser">
+    <div class="teaser-label">On the Horizon</div>
+    <h3>MAJI&sup2;</h3>
+    <p>A consciousness-grounded AI engine built on the framework described in these papers. The research is the star. The engine comes next.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-tagline">Forged, Not Generated.</div>
+  <div class="footer-copy">&copy; 2026 The Guild of Logosmith Alchemists for the Common Good</div>
+</footer>
+
+<script>
+const SUPABASE_URL = 'https://kqzqbjrcxuqblrroevna.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_PEhDGruRRvVATI4BlRT3qg_riqMB78W';
+
+async function handleEmail() {
+  const input = document.getElementById('email-input');
+  const msg = document.getElementById('email-msg');
+  const email = input.value.trim().toLowerCase();
+
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.display = 'block';
+    msg.style.color = 'var(--text-muted)';
+    return;
+  }
+
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/email_signups`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON,
+        'Authorization': `Bearer ${SUPABASE_ANON}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ email, source: 'research-site' })
+    });
+
+    if (res.ok) {
+      msg.textContent = 'Thank you. We will be in touch.';
+      msg.style.display = 'block';
+      msg.style.color = 'var(--forged-brass)';
+      input.value = '';
+    } else if (res.status === 409) {
+      msg.textContent = 'You are already on the list. We will be in touch.';
+      msg.style.display = 'block';
+      msg.style.color = 'var(--forged-brass)';
+      input.value = '';
+    } else {
+      throw new Error(res.status);
+    }
+  } catch (e) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+    msg.style.color = 'var(--text-muted)';
+  }
+}
+</script>
+
+</body>
+</html>

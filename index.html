@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forged Lucidity Research Institute</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0B1320;
+    --brass: #C8A96A;
+    --parchment: #F4F1E8;
+    --brass-dim: rgba(200,169,106,0.35);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--navy);
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  /* Star field */
+  .stars {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  }
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--parchment);
+    animation: twinkle var(--dur) ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.45; }
+  }
+
+  /* Layout */
+  .page {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .institute-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--brass-dim);
+    margin-bottom: 2rem;
+  }
+
+  .heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--parchment);
+    margin-bottom: 2.5rem;
+  }
+
+  .lang-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 520px;
+  }
+
+  .lang-btn {
+    background: rgba(244,241,232,0.03);
+    border: 1px solid rgba(200,169,106,0.15);
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    color: rgba(244,241,232,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+  }
+  .lang-btn:hover {
+    background: rgba(200,169,106,0.12);
+    border-color: rgba(200,169,106,0.4);
+    color: var(--brass);
+  }
+  .lang-btn.primary {
+    background: rgba(200,169,106,0.12);
+    border-color: rgba(200,169,106,0.4);
+    color: var(--brass);
+  }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(200,169,106,0.2);
+    margin-top: 2.5rem;
+  }
+
+  /* Coming soon overlay */
+  .overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(11,19,32,0.95);
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+  }
+  .overlay.open { display: flex; }
+  .overlay h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: var(--parchment);
+    margin-bottom: 1rem;
+  }
+  .overlay p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(244,241,232,0.45);
+    line-height: 1.7;
+    max-width: 400px;
+    margin-bottom: 0.8rem;
+  }
+  .overlay a {
+    color: var(--brass);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .overlay-close {
+    margin-top: 1.5rem;
+    background: none;
+    border: 1px solid rgba(200,169,106,0.25);
+    color: var(--brass);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    padding: 10px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .overlay-close:hover {
+    background: rgba(200,169,106,0.1);
+  }
+
+  .translation-note {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(200,169,106,0.25);
+    font-style: italic;
+    margin-top: 2rem;
+  }
+  .translation-note a {
+    color: rgba(200,169,106,0.4);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Main Page -->
+<div class="page">
+  <img src="/images/brand-ember.png" alt="Forged Lucidity — Fire Horse Emblem" style="width: clamp(100px, 18vw, 160px); height: auto; margin-bottom: 1.5rem; opacity: 0.9;">
+  <div class="institute-label">Forged Lucidity Research Institute</div>
+  <h1 class="heading">Choose Your Language</h1>
+
+  <div class="lang-grid">
+    <a href="/home" class="lang-btn primary">English</a>
+    <button class="lang-btn" onclick="showComingSoon('Español')">Español</button>
+    <button class="lang-btn" onclick="showComingSoon('Français')">Français</button>
+    <button class="lang-btn" onclick="showComingSoon('Deutsch')">Deutsch</button>
+    <button class="lang-btn" onclick="showComingSoon('Português')">Português</button>
+    <button class="lang-btn" onclick="showComingSoon('日本語')">日本語</button>
+    <button class="lang-btn" onclick="showComingSoon('中文')">中文</button>
+    <button class="lang-btn" onclick="showComingSoon('한국어')">한국어</button>
+    <button class="lang-btn" onclick="showComingSoon('العربية')">العربية</button>
+    <button class="lang-btn" onclick="showComingSoon('हिन्दी')">हिन्दी</button>
+    <button class="lang-btn" onclick="showComingSoon('Kiswahili')">Kiswahili</button>
+  </div>
+
+  <p class="translation-note">
+    Can you help translate this work into another language?
+    <a href="mailto:translations@forgedlucidity.ai">translations@forgedlucidity.ai</a>
+  </p>
+
+  <p class="tagline">Forged, Not Generated.</p>
+</div>
+
+<!-- Coming Soon Overlay -->
+<div class="overlay" id="comingSoon">
+  <h2 id="langName"></h2>
+  <p>Translations are in progress. The research is currently available in English, and we are actively working to make it accessible in as many languages as possible.</p>
+  <p>If you are a native speaker and would like to help, please reach out at <a href="mailto:translations@forgedlucidity.ai">translations@forgedlucidity.ai</a></p>
+  <button class="overlay-close" onclick="hideComingSoon()">Continue in English</button>
+  <button class="overlay-close" onclick="document.getElementById('comingSoon').classList.remove('open')" style="border: none; margin-top: 0.5rem; font-size: 0.75rem; color: rgba(200,169,106,0.35);">Go back</button>
+</div>
+
+<script>
+// Generate stars
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  const size = Math.random() * 2 + 0.5;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.setProperty('--dur', (Math.random() * 6 + 3) + 's');
+  star.style.opacity = Math.random() * 0.3 + 0.05;
+  starsEl.appendChild(star);
+}
+
+function showComingSoon(lang) {
+  document.getElementById('langName').textContent = lang;
+  document.getElementById('comingSoon').classList.add('open');
+}
+
+function hideComingSoon() {
+  document.getElementById('comingSoon').classList.remove('open');
+  window.location.href = '/home';
+}
+</script>
+
+</body>
+</html>
