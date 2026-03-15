@@ -1184,8 +1184,10 @@ export default function ForgedLuciditySite() {
         opacity: fadeIn ? 1 : 0,
         transition: "opacity 0.25s ease",
       }}>
-        {renderPage()}
+        <a href="https://eous-app.vercel.app/auth/login" style={{position:"fixed",top:20,right:24,fontFamily:"Source Sans 3,sans-serif",fontSize:13,color:"rgba(200,169,106,0.5)",textDecoration:"none",letterSpacing:0.5,zIndex:100}}>Sign In</a>{renderPage()}
       </div>
     </>
   );
 }
+
+
